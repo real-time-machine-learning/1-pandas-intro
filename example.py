@@ -97,11 +97,13 @@ matplotlib.style.use('ggplot')
 ## 每秒收盘价是什么样子的走势？可以这么看
 
 data_trading_hour["Close"].plot()
+## plt.savefig("plots/closing-price-plot.png")
 plt.show()
 
 ## 每秒成交量是什么样的分布？我们可以做出直方图:
 
 data_trading_hour["Volume"].plot.hist()
+## plt.savefig("plots/volume-histogram.png")
 plt.show()
 
 ## 怎么会这样？看看是否具有特别大的成交量出现？果然如我们假设，中午时分
@@ -110,6 +112,7 @@ plt.show()
 data_trading_hour["Volume"].describe()
 
 data_trading_hour["Volume"].plot()
+## plt.savefig("plots/volume-plot.png")
 plt.show()
 
 """收盘价变化率初探
@@ -121,10 +124,12 @@ plt.show()
 ## 下面我们可以看到，Series对象的很多操作可以链式在一行完成，非常方便：
 
 data_trading_hour["Close"].diff().plot.hist()
+## plt.savefig("plots/price-change-histogram.png")
 plt.show()
 
 change = data_trading_hour["Close"].diff()/data_trading_hour["Close"]
 change.plot()
+## plt.savefig("plots/price-change-plot.png")
 plt.show()
 
 ## 看看前一秒变化率和后一秒变化率之间的关系。
@@ -135,6 +140,7 @@ change.shift(2).corr(change)
 ## 系统性的看看相差时间长度和相关性变化之间的差距：
 
 plt.acorr(change[1:], lw = 2)
+## plt.savefig("plots/price-change-auto-correlation.png")
 plt.show()
 
 ## 哇，没想到相关程度这么大，那我们在后面好好利用这样的性质做做文章。
