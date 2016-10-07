@@ -37,6 +37,12 @@ Windows用户……安装一下Ubuntu好吗？
 sudo pip3 install -r requirements.txt
 ```
 
+如果一切顺利，上面操作完成以后，我们可以启动Python3并且调用Pandas
+```shell
+python3 
+>>> import pandas as pd
+```
+
 ## Pandas基本操作
 
 下面我们将利用`example.py`中的操作介绍pandas的基本模块。
