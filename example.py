@@ -82,6 +82,10 @@ data.index.max()
 
 data_trading_hour = data["201508030930":"201508031529"]
 
+## 将交易时间的数据保存起来供后面使用：
+
+data_trading_hour.to_csv("aapl-trading-hour.csv")
+
 """ 可视化操作
 
 对每一秒收盘价进行可视化操作：
